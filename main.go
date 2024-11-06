@@ -42,7 +42,7 @@ func main() {
 	if err != nil {
 		panic("failed to start polling: " + err.Error())
 	}
-	fmt.Printf("%s has been started...\nMade with ❤️ by @xnony (@StarDevs).\n", b.User.Username)
+	fmt.Printf("%s has been started...\nMade with ❤️ by @HiBRID_BK (@HiBRIDBK).\n", b.User.Username)
 
 	// Idle, to keep updates coming in, and avoid bot stopping.
 	updater.Idle()
@@ -78,16 +78,16 @@ func start(ctx *ext.Context) error {
 	}
 	// Following string is replied to cmd user on /start 
 	MSG = "*Hi %v,\n" +
-		"I am an Account Generator Bot\n" +
+		"I am an Digital Account Generator Bot\n" +
 		"-------------------------------------------------\n" +
 		"I can provide premium accounts of different services\n" +
 		"--------------------------------------------------\n" +
 		"Do /gen to generate an account\n" +
 		"--------------------------------------------------\n" +
-		"❤️Brought to You By @Stardevs❤️\n*"
+		"❤️Brought to You By @HiBRID_BK❤️\n*"
 
 	user := ctx.EffectiveUser
-	channel_id, cerror := strconv.Atoi(os.Getenv("CHANNEL_ID"))
+	channel_id, cerror := strconv.Atoi(os.Getenv("1002188527822"))
 	if cerror != nil {fmt.Println("Please Provide me a valid Channel ID")}
 	member, eror := ctx.Bot.GetChatMember(int64(channel_id), user.Id)
 	if eror != nil {
@@ -129,7 +129,7 @@ func gen(ctx *ext.Context) error {
 		"\n\n𝙏𝙝𝙖𝙣𝙠 𝙮𝙤𝙪 𝙛𝙤𝙧 𝙪𝙨𝙞𝙣𝙜 𝙢𝙚!\n❤️𝙎𝙝𝙖𝙧𝙚 & 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 *%v*❤️"
 
 	user := ctx.EffectiveUser
-	channel_id, cerror := strconv.Atoi(os.Getenv("CHANNEL_ID"))
+	channel_id, cerror := strconv.Atoi(os.Getenv("1002188527822"))
 	if cerror != nil {fmt.Println("Please Provide me a valid Channel ID")}
 	member, eror := ctx.Bot.GetChatMember(int64(channel_id), user.Id)
 	if eror != nil {
@@ -138,7 +138,7 @@ func gen(ctx *ext.Context) error {
 	}
 	// For Checking either user joined channel or not
 	if member.Status == "member" || member.Status == "administrator" || member.Status == "creator" {
-		_, err := ctx.EffectiveMessage.Reply(ctx.Bot, fmt.Sprintf(MSG, os.Getenv("ACC_NAME"), Combo[0], Combo[1], user.FirstName, os.Getenv("CHANNEL_USERNAME")), &gotgbot.SendMessageOpts{
+		_, err := ctx.EffectiveMessage.Reply(ctx.Bot, fmt.Sprintf(MSG, os.Getenv("@HiBRID_BK"), Combo[0], Combo[1], user.FirstName, os.Getenv("@HiBRIDBK")), &gotgbot.SendMessageOpts{
 			ParseMode: "Markdown",
 		})
 		if err != nil {
@@ -146,7 +146,7 @@ func gen(ctx *ext.Context) error {
 		}
 	} else {
 		// An Error message replied to command user if he's not member of the JoinCheck Channel
-		ctx.EffectiveMessage.Reply(ctx.Bot, fmt.Sprintf("*You must join %v to use me.*", os.Getenv("CHANNEL_USERNAME")), &gotgbot.SendMessageOpts{ParseMode: "Markdown"})
+		ctx.EffectiveMessage.Reply(ctx.Bot, fmt.Sprintf("*You must join @HiBRID_BK to use me.*", os.Getenv("@HiBRID_BK")), &gotgbot.SendMessageOpts{ParseMode: "Markdown"})
 	}
 	if strings.ToLower(os.Getenv("LOGS")) != "false"{
 		logs, log_err := strconv.Atoi(os.Getenv("LOGS"))
