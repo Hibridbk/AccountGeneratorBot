@@ -25,7 +25,7 @@ var MSG string
 
 func main() {
 	// Put Your Bot Token via ENV Vars
-	b, err := gotgbot.NewBot(os.Getenv("TOKEN"))
+	b, err := gotgbot.NewBot(os.Getenv("7049978269:AAG5Y1Qh-Ys0CM56VWdhCnacOBaWymxa8Gw"))
 	if err != nil {
 		panic("failed to create new bot: " + err.Error())
 	}
